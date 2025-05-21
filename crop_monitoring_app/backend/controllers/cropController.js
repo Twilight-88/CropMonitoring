@@ -11,14 +11,12 @@ exports.uploadCropImage = async (req, res) => {
       return res.status(400).json({ message: 'Image file is required' });
     }
 
-    // Build relative URL path to serve the image from /uploads folder
     const imageUrl = path.join('/uploads', req.file.filename).replace(/\\/g, '/');
 
     const newCrop = new Crop({
-      user: req.user._id,                 // From the protect middleware
+      user: req.user._id,                 
       cropName,
-      //imageUrl: req.file.path,           // Stored image path
-      imageUrl,  // Save URL path, not local absolute path
+      imageUrl, 
     });
 
     const savedCrop = await newCrop.save();
@@ -49,11 +47,9 @@ exports.updateCrop = async (req, res) => {
       return res.status(404).json({ message: 'Crop not found' });
     }
 
-    // Check if user owns the crop or is admin (optional)
 
     if (cropName) crop.cropName = cropName;
 
-    // If new image uploaded, update imageUrl
     if (req.file) {
       crop.imageUrl = path.join('/uploads', req.file.filename).replace(/\\/g, '/');
     }
@@ -76,7 +72,6 @@ exports.deleteCrop = async (req, res) => {
       return res.status(404).json({ message: 'Crop not found' });
     }
 
-    // Optional: check if user owns the crop or is admin
     res.json({ message: 'Crop deleted' });
   } catch (error) {
     res.status(500).json({ message: 'Error deleting crop', error: error.message });
