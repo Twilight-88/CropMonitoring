@@ -1,5 +1,3 @@
-# backend/predict.py (or move to cv_module and call from backend)
-# predict.py — main prediction script calling preprocess and detector
 import sys
 import os
 import subprocess
