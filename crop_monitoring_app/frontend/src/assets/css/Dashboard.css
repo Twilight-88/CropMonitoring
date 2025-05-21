@@ -1,0 +1,65 @@
+:root {
+  --accent-yellow: #ffc107;
+  --primary-green: #28a745;
+  --danger-red: #dc3545;
+  --info-blue: #17a2b8;
+  --sidebar-bg: #2e3b4e;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: white;
+  min-height: 100vh;
+}
+
+.sidebar h4 {
+  font-weight: bold;
+  color: var(--accent-yellow);
+}
+
+.sidebar .nav-link {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.alert-badge {
+  background-color: var(--danger-red);
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.main-content {
+  background-color: #ffffff;
+}
+
+.dashboard-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.upload-area {
+  border: 2px dashed #ccc;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-area:hover {
+  background-color: #f8f9fa;
+}

@@ -1,0 +1,130 @@
+:root {
+  --primary-green: #2e7d32;
+  --light-green: #81c784;
+  --dark-green: #1b5e20;
+  --accent-yellow: #ffd54f;
+}
+
+.resources-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-title {
+  color: var(--dark-green);
+  font-weight: 700;
+}
+
+.page-title svg {
+  color: var(--primary-green);
+}
+
+/* Resource Cards */
+.resource-card {
+  transition: all 0.3s;
+  height: 100%;
+  border-left: 4px solid var(--primary-green);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.article-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Featured Post */
+.featured-post {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-post-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Newsletter Box */
+.newsletter-box {
+  background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), 
+              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+}
+
+.search-box .form-control {
+  padding-left: 40px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: var(--primary-green);
+  z-index: 10;
+}
+
+/* Tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: var(--dark-green);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  border: none;
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  background-color: var(--primary-green);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .featured-post-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-post-img {
+    height: 200px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
