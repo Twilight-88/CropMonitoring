@@ -2,7 +2,7 @@ const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const sendEmail = require('../utils/sendEmail'); // utility to send emails
+const sendEmail = require('../utils/sendEmail'); 
 const crypto = require('crypto');
 
 const generateToken = (id) => {
@@ -109,7 +109,6 @@ exports.resetPassword = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid or expired token' });
     }
 
-    // Assign plain password; pre-save hook will hash it
     user.password = password;
 
     user.resetPasswordToken = undefined;
